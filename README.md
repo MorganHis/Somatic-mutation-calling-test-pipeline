@@ -2,7 +2,8 @@
 # Somatic mutation calling pipeline for individual sample #
 
 This pipeline based on snakemake calls somatic variants from next-generation whole-exome/genome sequencing of human samples and produces a purely filtered VCF file containing high confident somatic mutations
-![img](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/99f2040d-f064-4b93-b458-423d942767e0)
+![image](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/b490c5fb-6e51-4f0d-b129-f2a24c649a33)
+
 
 -----------------------------------
 
