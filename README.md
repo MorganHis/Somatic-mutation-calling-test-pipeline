@@ -2,10 +2,11 @@
 # Somatic mutation calling pipeline for individual sample #
 
 This pipeline based on snakemake calls somatic variants from next-generation whole-exome/genome sequencing of human samples and produces a purely filtered VCF file containing high confident somatic mutations
-![img.png](img.png)
+![img](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/99f2040d-f064-4b93-b458-423d942767e0)
+
 -----------------------------------
 
-#### Please download the following files which are required known variation vcf files in the GRCh38 resource bundle in advance, and put all downloaded files into the same directory -`` gatk_db ``, coincided with the directory in your configuration file (`` config.yaml ``)
+## Please download the following files which are required known variation vcf files in the GRCh38 resource bundle in advance, and put all downloaded files into the same directory -`` gatk_db ``, coincided with the directory in your configuration file (`` config.yaml ``)
 
 ### 1). GRCh38 reference: `` GRCh38_full_analysis_set_plus_decoy_hla.fa``
 * reference: https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/
@@ -29,43 +30,43 @@ This pipeline based on snakemake calls somatic variants from next-generation who
 
 -----------------------------------
 
-#### Required input data
+## Required input data
 
-## Please place both files in the same directory, which the directory will be set as the `` sample_dir `` in your configuration file (`` config.yaml ``)
+#### Please place both files in the same directory, which the directory will be set as the `` sample_dir `` in your configuration file (`` config.yaml ``)
 
 * Two FASTQ files (named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz') contained paired-end next generation sequencing (WES or WGS) data
 
 -----------------------------------
 
-#### Installation
+## Installation
 
 * conda >= 22.9.0 is required
 
-# 0. Open the directory to download the pipeline
+### 0. Open the directory to download the pipeline
 
 ```
 cd  path/to/download
 ```
 
-# 1. Clone the repo
+### 1. Clone the repo
 
 ```
 git clone https://github.com/Shuhua-Group/Somatic-mutation-calling-pipeline.git
 ```
 
-# 2. Open the work directory where you want to run this pipeline
+### 2. Open the work directory where you want to run this pipeline
 
 ```
 cd Somatic-mutation-calling-pipeline
 ```
 
-# 3. Create the conda environment
+### 3. Create the conda environment
 
 ```
 conda env create -f environment.yaml
 ```
 
-# 4. Active the conda environment
+### 4. Active the conda environment
 
 ```
 conda activate SomaticMC
@@ -73,7 +74,7 @@ conda activate SomaticMC
 
 -----------------------------------
 
-#### How to run
+## How to run
 
 ### 0. Modify the configuration file
 
@@ -81,19 +82,19 @@ conda activate SomaticMC
 
 ---⬇️---
 
-## sampleName
+#### sampleName
 
 sampleName: "D2003005082"
 
-## replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the work directory where you want to run this pipeline
+#### replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the work directory where you want to run this pipeline
 
 work_dir: /path/to/download/Somatic-mutation-calling-pipeline
 
-# replace the "/path/to/reference" to the absolute directory where the required reference files were downloaded
+#### replace the "/path/to/reference" to the absolute directory where the required reference files were downloaded
 
 gatk_db: /path/to/reference
 
-## replace the "/path/to/sampleFolder" to the absolute directory to the input WES/WGS data (named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz')
+#### replace the "/path/to/sampleFolder" to the absolute directory to the input WES/WGS data (named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz')
 
 sample_dir: /path/to/sampleFolder
 
@@ -120,7 +121,7 @@ See more details at [snakemake doc](https://snakemake.readthedocs.io/en/stable/e
 
 -----------------------------------
 
-#### Output
+## Output
 
 If the pipeline runs correctly, the results file will be written to `{download_dir}`, including:
 
