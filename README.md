@@ -2,7 +2,8 @@
 # Somatic mutation calling pipeline for individual sample #
 
 This pipeline based on snakemake calls somatic variants from next-generation whole-exome/genome sequencing of human samples and produces a purely filtered VCF file containing high confident somatic mutations
-![img.png](img.png)
+![img](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/99f2040d-f064-4b93-b458-423d942767e0)
+
 -----------------------------------
 
 #### Please download the following files which are required known variation vcf files in the GRCh38 resource bundle in advance, and put all downloaded files into the same directory -`` gatk_db ``, coincided with the directory in your configuration file (`` config.yaml ``)
