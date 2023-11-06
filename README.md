@@ -79,7 +79,8 @@ conda activate SomaticMC
 
 * The provided configuration file (`` config.yaml ``) is presented as follows, and it requires modification for some items as described in the comment lines
 
---️----⬇--️----
+---⬇️---
+
 #### sampleName (your input files should be named as 'sampleName_1.fq.gz' and 'sampleName_2.fq.gz'.)
 sampleName: "your_sampleName"
 
@@ -95,7 +96,9 @@ sample_dir: /path/to/sampleFolder
 threads: 128
 
 mem_mb: 131072
---️----⬆--️----
+
+
+---⬆️---
 
 ### 1. Run snakemake
 
