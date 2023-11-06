@@ -1,7 +1,6 @@
-# Somatic-mutation-calling-test-pipeline
 # Somatic mutation calling pipeline for individual sample #
 
-This pipeline based on snakemake calls somatic variants from next-generation whole-exome/genome sequencing of human samples and produces a purely filtered VCF file containing high confident somatic mutations
+### This pipeline based on snakemake calls somatic variants from next-generation whole-exome/genome sequencing of human samples and produces a purely filtered VCF file containing high confident somatic mutations
 ![image](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/b490c5fb-6e51-4f0d-b129-f2a24c649a33)
 -----------------------------------
 
@@ -29,43 +28,43 @@ This pipeline based on snakemake calls somatic variants from next-generation who
 
 -----------------------------------
 
-#### Required input data
+## Required input data
 
-## Please place both files in the same directory, which the directory will be set as the `` sample_dir `` in your configuration file (`` config.yaml ``)
+### Please place both files in the same directory, which the directory will be set as the `` sample_dir `` in your configuration file (`` config.yaml ``)
 
 * Two FASTQ files (named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz') contained paired-end next generation sequencing (WES or WGS) data
 
 -----------------------------------
 
-#### Installation
+## Installation
 
 * conda >= 22.9.0 is required
 
-# 0. Open the directory to download the pipeline
+### 0. Open the directory to download the pipeline
 
 ```
 cd  path/to/download
 ```
 
-# 1. Clone the repo
+### 1. Clone the repo
 
 ```
 git clone https://github.com/Shuhua-Group/Somatic-mutation-calling-pipeline.git
 ```
 
-# 2. Open the work directory where you want to run this pipeline
+### 2. Open the work directory where you want to run this pipeline
 
 ```
 cd Somatic-mutation-calling-pipeline
 ```
 
-# 3. Create the conda environment
+### 3. Create the conda environment
 
 ```
 conda env create -f environment.yaml
 ```
 
-# 4. Active the conda environment
+### 4. Active the conda environment
 
 ```
 conda activate SomaticMC
@@ -73,7 +72,7 @@ conda activate SomaticMC
 
 -----------------------------------
 
-#### How to run
+## How to run
 
 ### 0. Modify the configuration file
 
@@ -81,16 +80,16 @@ conda activate SomaticMC
 
 ---⬇️---
 
-## sampleName (your input files should be named as 'sampleName_1.fq.gz' and 'sampleName_2.fq.gz'.)
+#### sampleName (your input files should be named as 'sampleName_1.fq.gz' and 'sampleName_2.fq.gz'.)
 sampleName: "your_sampleName"
 
-## replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the absolute directory where the pipeline was downloaded
+#### replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the absolute directory where the pipeline was downloaded
 download_dir: /path/to/download/Somatic-mutation-calling-pipeline
 
-# replace the "/path/to/reference" to the absolute directory where the required reference data were downloaded
+#### replace the "/path/to/reference" to the absolute directory where the required reference data were downloaded
 gatk_db: /path/to/reference
 
-## replace the "/path/to/sampleFolder" to the absolute directory where the samples(named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz') were
+#### replace the "/path/to/sampleFolder" to the absolute directory where the samples(named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz') were
 sample_dir: /path/to/sampleFolder
 
 threads: 128
@@ -115,7 +114,7 @@ See more details at [snakemake doc](https://snakemake.readthedocs.io/en/stable/e
 
 -----------------------------------
 
-#### Output
+## Output
 
 If the pipeline runs correctly, the results file will be written to `{download_dir}`, including:
 
@@ -130,7 +129,7 @@ If the pipeline runs correctly, the results file will be written to `{download_d
 
 -----------------------------------
 
-#### Notes
+### Notes
 
 * Please give credit to the relevant paper if the pipeline was applied to your work
 
