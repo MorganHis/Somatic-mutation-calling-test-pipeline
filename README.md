@@ -4,6 +4,7 @@
 ![image](https://github.com/MorganHis/Somatic-mutation-calling-test-pipeline/assets/84215074/b490c5fb-6e51-4f0d-b129-f2a24c649a33)
 -----------------------------------
 
+## Required downloaded files
 #### Please download the following files which are required known variation vcf files in the GRCh38 resource bundle in advance, and put all downloaded files into the same directory -`` gatk_db ``, coincided with the directory in your configuration file (`` config.yaml ``)
 
 ### 1). GRCh38 reference: `` GRCh38_full_analysis_set_plus_decoy_hla.fa``
@@ -78,8 +79,7 @@ conda activate SomaticMC
 
 * The provided configuration file (`` config.yaml ``) is presented as follows, and it requires modification for some items as described in the comment lines
 
----⬇️---
-
+--️----⬇--️----
 #### sampleName (your input files should be named as 'sampleName_1.fq.gz' and 'sampleName_2.fq.gz'.)
 sampleName: "your_sampleName"
 
@@ -95,9 +95,7 @@ sample_dir: /path/to/sampleFolder
 threads: 128
 
 mem_mb: 131072
-
-
----⬆️---
+--️----⬆--️----
 
 ### 1. Run snakemake
 
@@ -118,11 +116,13 @@ See more details at [snakemake doc](https://snakemake.readthedocs.io/en/stable/e
 
 If the pipeline runs correctly, the results file will be written to `{download_dir}`, including:
 
-* a filtered individual VCF (named as *.somatic.final.vcf.gz) containing all detected somatic variants after hard filtering by Mutect2 will be written to: `` {download_dir}/vcf/{sample} ``, with high confident somatic variants remained
+* a filtered individual VCF (named as *.somatic.final.vcf.gz) containing all detected somatic variants after hard filtering by Mutect2 will be written to: `` {download_dir}/output/vcf/{sample} ``, with high confident somatic variants remained
 
-* an individual VCF (named as *.mutect2.vcf.gz) containing raw somatic variants calling output without filtration will be written to: `` {download_dir}/vcf/{sample} ``, which you can define the filtration rules customized
+* an individual VCF (named as *.mutect2.vcf.gz) containing raw somatic variants calling output without filtration will be written to: `` {download_dir}/output/vcf/{sample} ``, which you can define the filtration rules customized
 
-* a bam file (named as *.recal_reads.bam) containing pre-processed reads by the GATK BQSR will be written to: `` {download_dir}/gatk/{sample} ``, which could be directly loaded into IGV (Integrative Genomics Viewer) to check the sequenced reads coverage
+* a bam file (named as *.recal_reads.bam) containing pre-processed reads by the GATK BQSR will be written to: `` {download_dir}/output/gatk/{sample} ``, which could be directly loaded into IGV (Integrative Genomics Viewer) to check the sequenced reads coverage
+
+* all log files will be saved in the `` {download_dir}/logs/ `` directory
 
 
 * To further interpret the results, see more details at(https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2)
