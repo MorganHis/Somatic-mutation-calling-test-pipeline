@@ -81,20 +81,16 @@ conda activate SomaticMC
 
 ---⬇️---
 
-## sampleName
+## sampleName (your input files should be named as 'sampleName_1.fq.gz' and 'sampleName_2.fq.gz'.)
+sampleName: "your_sampleName"
 
-sampleName: "D2003005082"
+## replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the absolute directory where the pipeline was downloaded
+download_dir: /path/to/download/Somatic-mutation-calling-pipeline
 
-## replace the "/path/to/download/Somatic-mutation-calling-pipeline" to the work directory where you want to run this pipeline
-
-work_dir: /path/to/download/Somatic-mutation-calling-pipeline
-
-# replace the "/path/to/reference" to the absolute directory where the required reference files were downloaded
-
+# replace the "/path/to/reference" to the absolute directory where the required reference data were downloaded
 gatk_db: /path/to/reference
 
-## replace the "/path/to/sampleFolder" to the absolute directory to the input WES/WGS data (named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz')
-
+## replace the "/path/to/sampleFolder" to the absolute directory where the samples(named as 'sampleID_1.fq.gz' and 'sampleID_2.fq.gz') were
 sample_dir: /path/to/sampleFolder
 
 threads: 128
